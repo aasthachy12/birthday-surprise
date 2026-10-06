@@ -209,7 +209,7 @@ document.addEventListener("DOMContentLoaded", function () {
             `${targetX - arrowLength * Math.cos(angle)}px`;
 
           flyingArrow.style.top =
-            `${targetY - arrowLength * Math.sin(angle) - 14}px`;
+            `${targetY - arrowLength * Math.sin(angle) + 10}px`;
         });
       });
     }, arrowStartDelay);
