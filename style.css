@@ -1,0 +1,1590 @@
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@500;700&family=Gochi+Hand&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap");
+
+* {
+  box-sizing: border-box
+}
+
+html {
+  scroll-behavior: smooth
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: "DM Sans", sans-serif;
+  background-color: #f9e6e3;
+  background-image: radial-gradient(circle at 15% 18%, #ffd1d8 0 70px, transparent 72px), radial-gradient(circle at 85% 80%, #ffc7d1 0 95px, transparent 97px), radial-gradient(circle at 85% 15%, #fff5cc 0 45px, transparent 47px), linear-gradient(90deg, rgba(255, 255, 255, .45) 1px, transparent 1px), linear-gradient(rgba(255, 255, 255, .45) 1px, transparent 1px);
+  background-size: auto, auto, auto, 24px 24px, 24px 24px
+}
+
+:where([hidden]) {
+  display: none !important
+}
+
+.page {
+  width: min(100%, 700px);
+  min-height: 100vh;
+  margin: auto;
+  padding: 45px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative
+}
+
+.page::before {
+  content: "🌼  ♡  ✦  🌷";
+  position: absolute;
+  top: 35px;
+  left: 30px;
+  right: 30px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.7rem;
+  transform: rotate(-4deg)
+}
+
+.page::after {
+  content: "🐾   ♥   ✦";
+  position: absolute;
+  bottom: 38px;
+  left: 38px;
+  right: 38px;
+  display: flex;
+  justify-content: space-between;
+  color: #dd5573;
+  font-size: 1.5rem;
+  transform: rotate(4deg)
+}
+
+.top-text,
+.envelope-top-text {
+  margin: 0 0 20px;
+  padding: 8px 15px;
+  border-radius: 999px;
+  background: #fff9f5;
+  color: #ad6970;
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .13em
+}
+
+.baby-sticker {
+  width: min(190px, 52vw);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 7px solid #fffdf9;
+  border-radius: 45% 55% 48% 52%;
+  box-shadow: 8px 9px 0 #eaa3a7, 0 12px 25px rgba(126, 74, 74, .2);
+  transform: rotate(-5deg);
+  margin-bottom: 25px
+}
+
+h1 {
+  margin: 0;
+  color: #bf4356;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3.6rem, 12vw, 6.5rem);
+  line-height: .9;
+  letter-spacing: -.07em
+}
+
+.question {
+  margin: 20px 0 28px;
+  color: #664b4b;
+  font-family: "Gochi Hand", cursive;
+  font-size: clamp(1.6rem, 5vw, 2.3rem);
+  line-height: 1.1
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  min-height: 70px
+}
+
+button {
+  border: 2px solid #a8333e;
+  border-radius: 999px;
+  padding: 14px 24px;
+  cursor: pointer;
+  color: #fff;
+  background: #d94c4b;
+  box-shadow: 0 6px 0 #a62e35;
+  font-family: "Gochi Hand", cursive;
+  font-size: 1.15rem;
+  font-weight: bold;
+  letter-spacing: .04em;
+  transition: transform .2s ease
+}
+
+button:hover {
+  transform: translateY(-3px) rotate(-2deg)
+}
+
+#noButton {
+  color: #76595a;
+  background: #f7c5bf;
+  border-color: #bf8985;
+  box-shadow: 0 6px 0 #c18c89;
+  position: relative
+}
+
+.small-text {
+  margin-top: 29px;
+  color: #a57a77;
+  font-family: "Gochi Hand", cursive;
+  font-size: 1rem
+}
+
+/* Page 2: arrow, heart, birthday message */
+.birthday-page {
+  display: none;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, #fff9f8, #ffe3ea)
+}
+
+.birthday-page.show {
+  display: block
+}
+
+.pink-circle {
+  position: absolute;
+  top: 15%;
+  right: 17%;
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  background: #ffd0df;
+  filter: blur(2px)
+}
+
+.glowy-heart {
+  position: absolute;
+  z-index: 3;
+  top: 21%;
+  right: 21%;
+  font-size: clamp(7rem, 16vw, 10rem);
+  line-height: 1;
+  filter: drop-shadow(0 0 18px rgba(255, 61, 132, .55));
+  animation: softHeartbeat 1.2s ease-in-out infinite
+}
+
+@keyframes softHeartbeat {
+
+  0%,
+  100% {
+    transform: scale(1)
+  }
+
+  30% {
+    transform: scale(1.17)
+  }
+
+  55% {
+    transform: scale(.97)
+  }
+}
+
+.glowy-heart.hit {
+  animation: heartHit .65s ease-out forwards
+}
+
+@keyframes heartHit {
+  50% {
+    transform: scale(1.45);
+    filter: drop-shadow(0 0 32px #ff4d93)
+  }
+
+  100% {
+    transform: scale(1)
+  }
+}
+
+.cupid-arrow {
+  position: absolute;
+  z-index: 30;
+  top: 68%;
+  left: 12%;
+  width: 125px;
+  height: 28px;
+  opacity: 0;
+
+  --arrow-angle: -35deg;
+
+  transform-origin: 15px 14px;
+  transform: rotate(var(--arrow-angle));
+
+  transition:
+    top 1.6s ease-in-out,
+    left 1.6s ease-in-out,
+    transform 1.6s ease-in-out,
+    opacity 0.15s ease;
+}
+
+.cupid-arrow.shoot {
+  opacity: 1;
+}
+
+.cupid-arrow .shaft {
+  position: absolute;
+  top: 13px;
+  left: 15px;
+  width: 88px;
+  height: 3px;
+  border-radius: 20px;
+  background: #80514d
+}
+
+.cupid-arrow .tip {
+  position: absolute;
+  top: 6px;
+  right: 3px;
+  width: 16px;
+  height: 16px;
+  border-top: 3px solid #80514d;
+  border-right: 3px solid #80514d;
+  transform: rotate(45deg)
+}
+
+.cupid-arrow .feather {
+  position: absolute;
+  left: 0;
+  width: 29px;
+  height: 13px;
+  border: 3px solid #ef668d;
+  border-radius: 100%
+}
+
+.feather-one {
+  top: 0;
+  transform: rotate(28deg)
+}
+
+.feather-two {
+  top: 14px;
+  transform: rotate(-28deg)
+}
+
+@keyframes arrowToHeart {
+  0% {
+    opacity: 1;
+    bottom: 24%;
+    left: 20%
+  }
+
+  100% {
+    opacity: 1;
+    bottom: 57%;
+    left: 69%
+  }
+}
+
+.birthday-message {
+  position: absolute;
+  z-index: 10;
+  width: min(86%, 620px);
+  text-align: center;
+  opacity: 0;
+  pointer-events: none
+}
+
+.birthday-message.show-message {
+  pointer-events: auto;
+  animation: popFromHeart .85s ease-out forwards
+}
+
+@keyframes popFromHeart {
+  from {
+    opacity: 0;
+    top: 16%;
+    left: 82%;
+    transform: translate(-50%, -50%) scale(.03)
+  }
+
+  to {
+    opacity: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1)
+  }
+}
+
+.birthday-message h2 {
+  margin: 18px 0 0;
+  color: #dc5a72;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3.8rem, 11vw, 6.8rem);
+  font-weight: 600;
+  line-height: .92;
+  letter-spacing: -.055em
+}
+
+.birthday-message h3 {
+  margin: 28px 0 22px;
+  color: #c97688;
+  font-family: "Allura", cursive;
+  font-size: clamp(3.2rem, 8vw, 5.2rem);
+  font-weight: 400;
+  line-height: 1
+}
+
+.love-text {
+  margin: 0;
+  color: #806365;
+  font-family: "Gochi Hand", cursive;
+  font-size: clamp(1.25rem, 4vw, 1.8rem);
+  line-height: 1.15
+}
+
+.surprise-button {
+  margin-top: 28px;
+  border: 0;
+  padding: 15px 28px;
+  background: linear-gradient(90deg, #f17494, #e7466c);
+  box-shadow: 0 8px 17px rgba(207, 64, 100, .28);
+  font-family: "DM Sans", sans-serif;
+  font-size: .65rem;
+  letter-spacing: .12em
+}
+
+/* Envelope page */
+.envelope-page {
+  display: none;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding: 50px 25px;
+  text-align: center;
+  background: radial-gradient(circle at 12% 16%, #fff0b4 0 48px, transparent 50px), radial-gradient(circle at 87% 89%, #ffd1de 0 78px, transparent 80px), linear-gradient(135deg, #fffdfb, #ffe9ee)
+}
+
+.envelope-page.show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center
+}
+
+.envelope-title {
+  margin: 0;
+  color: #493b40;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.4rem, 8vw, 4rem);
+  font-weight: 600;
+  line-height: 1
+}
+
+.envelope-subtitle {
+  margin: 13px 0 11px;
+  color: #c97688;
+  font-family: "Allura", cursive;
+  font-size: clamp(2rem, 6vw, 3rem)
+}
+
+#catVideo {
+  position: fixed;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0
+}
+
+.cat-canvas {
+  width: min(150px, 40vw);
+  height: min(150px, 40vw);
+  margin: 0 0 22px;
+  object-fit: contain;
+  filter: drop-shadow(0 9px 9px rgba(184, 100, 112, .2));
+  animation: catDance 2.4s ease-in-out infinite
+}
+
+@keyframes catDance {
+  50% {
+    transform: translateY(-10px) rotate(5deg)
+  }
+}
+
+/* Envelope and letter rising from inside */
+.envelope-scene {
+  width: min(330px, 80vw);
+  height: 265px;
+  position: relative;
+  z-index: 5;
+  margin-top: 15px;
+
+  /* Bottom area hidden; top area letter ke liye open */
+  overflow: visible;
+  clip-path: inset(-230px 0 0 0);
+}
+
+
+.envelope-scene .envelope-button {
+  position: absolute;
+  z-index: 8;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.envelope-scene.opening {
+  overflow: visible
+}
+
+.envelope-button {
+  width: 100%;
+  height: 205px;
+  position: absolute;
+  z-index: 5;
+  bottom: 0;
+  left: 0;
+  border: 2px solid #9b7668;
+  border-radius: 7px;
+  background: linear-gradient(145deg, transparent 49.5%, #e8d3a9 50%, transparent 50.5%), linear-gradient(35deg, transparent 49.5%, #e8d3a9 50%, transparent 50.5%), linear-gradient(135deg, #fffdf3, #f4e6c8);
+  box-shadow: 0 13px 0 #d9c0b0, 0 21px 28px rgba(129, 91, 75, .18);
+  overflow: visible
+}
+
+.envelope-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(35deg, transparent 49.4%, #a77d6c 49.7%, #a77d6c 50.3%, transparent 50.6%), linear-gradient(-35deg, transparent 49.4%, #a77d6c 49.7%, #a77d6c 50.3%, transparent 50.6%);
+  pointer-events: none
+}
+
+.envelope-flap {
+  position: absolute;
+  z-index: 3;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 122px;
+  border-bottom: 2px solid #a77d6c;
+  background: linear-gradient(135deg, #fff9e8, #f3dfb5);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: top center;
+  transition: transform .65s ease-in-out
+}
+
+.envelope-heart {
+  position: absolute;
+  z-index: 4;
+  top: 84px;
+  left: 50%;
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  transform: translateX(-50%);
+  border: 3px solid #8d2947;
+  border-radius: 50%;
+  color: #fff7f2;
+  background: radial-gradient(circle at 35% 28%, #ff9db2 0 9%, transparent 10%), radial-gradient(circle at 50% 50%, #e75d7d 0 48%, #bd3457 50% 100%);
+  box-shadow: inset 0 0 0 4px rgba(255, 178, 194, .35), 0 4px 0 #8f2947, 0 7px 10px rgba(130, 43, 61, .22);
+  font-size: 1.8rem;
+  transition: .25s ease
+}
+
+/* Long secret letter page */
+.letter-page {
+  display: none;
+  min-height: 100vh;
+  height: auto;
+  padding: 75px 25px;
+  background: linear-gradient(135deg, #fff9f8, #ffe7ed)
+}
+
+.letter-page.show {
+  display: block
+}
+
+.letter-paper {
+  width: min(100%, 580px);
+  margin: auto;
+  padding: 45px 35px;
+  text-align: center;
+  background: #fffdf8;
+  border-radius: 6px;
+  box-shadow: 0 18px 35px rgba(170, 94, 108, .2)
+}
+
+.letter-label {
+  color: #bd7180;
+  font-size: .62rem;
+  font-weight: bold;
+  letter-spacing: .14em
+}
+
+.letter-paper h3 {
+  margin: 20px 0 25px;
+  color: #ce6179;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: .9
+}
+
+.secret-message {
+  color: #735d5d;
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.8
+}
+
+.letter-sign {
+  margin-top: 30px;
+  color: #c46b7d;
+  font-family: "Allura", cursive;
+  font-size: 2rem;
+  line-height: 1.1
+}
+
+.letter-sign span {
+  font-size: 2.5rem
+}
+
+.song-placeholder {
+  width: min(100%, 580px);
+  margin: 55px auto 0;
+  padding: 30px;
+  text-align: center;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .62);
+  color: #bb7080
+}
+
+.song-placeholder p {
+  margin: 0 0 8px;
+  font-family: "Gochi Hand", cursive;
+  font-size: 1.8rem
+}
+
+.song-placeholder small {
+  color: #a88888
+}
+
+@media(max-width:500px) {
+  .page {
+    padding: 40px 20px
+  }
+
+  .baby-sticker {
+    width: 165px
+  }
+
+  .glowy-heart {
+    top: 19%;
+    right: 12%;
+    font-size: 7rem
+  }
+
+  .pink-circle {
+    top: 13%;
+    right: 7%;
+    width: 120px;
+    height: 120px
+  }
+
+  .cupid-arrow {
+    bottom: 25%;
+    left: 14%
+  }
+
+  @keyframes arrowToHeart {
+    0% {
+      opacity: 1;
+      bottom: 24%;
+      left: 20%
+    }
+
+    100% {
+      opacity: 1;
+      bottom: 66%;
+      left: 69%
+    }
+  }
+
+  .letter-paper {
+    padding: 38px 24px
+  }
+}
+/* Mobile-first perfect fitting */
+
+@media (max-width: 600px) {
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .page,
+  .birthday-page,
+  .envelope-page,
+  .letter-page {
+    width: 100%;
+    min-height: 100svh;
+  }
+
+  .birthday-message {
+    width: 92%;
+  }
+
+  .birthday-message h2 {
+    font-size: clamp(3.5rem, 18vw, 5.6rem);
+    line-height: 0.88;
+  }
+
+  .birthday-message h3 {
+    font-size: clamp(3rem, 14vw, 4.5rem);
+    margin: 22px 0 18px;
+  }
+
+  .love-text {
+    font-size: 1.35rem;
+  }
+
+  .glowy-heart {
+    top: 12%;
+    right: 7%;
+    font-size: 6.6rem;
+  }
+
+  .pink-circle {
+    top: 8%;
+    right: 2%;
+    width: 118px;
+    height: 118px;
+  }
+
+  .cupid-arrow {
+    bottom: 24%;
+    left: 8%;
+    transform: rotate(-34deg) scale(0.85);
+  }
+
+  @keyframes arrowToHeart {
+    0% {
+      opacity: 1;
+      bottom: 24%;
+      left: 8%;
+    }
+
+    100% {
+      opacity: 1;
+      bottom: 64%;
+      left: 54%;
+    }
+  }
+
+  .envelope-title {
+    font-size: clamp(2.2rem, 10vw, 3.3rem);
+  }
+
+  .envelope-scene {
+    width: min(330px, 88vw);
+  }
+
+  .letter-page {
+    padding: 45px 17px;
+  }
+
+  .letter-paper {
+    width: 100%;
+    padding: 34px 20px;
+  }
+
+  .letter-paper h2 {
+    font-size: clamp(2.6rem, 12vw, 4rem);
+  }
+
+  .song-placeholder {
+    width: 100%;
+  }
+}
+/* Cake and candle */
+.wish-section {
+  min-height: 100vh;
+  padding: 100px 20px 80px;
+  text-align: center;
+  background: linear-gradient(135deg, #fff9f8, #ffe7ed);
+}
+
+.wish-label {
+  margin: 0 0 52px;
+  color: #c46b7d;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+}
+
+.cake {
+  width: 230px;
+  margin: 0 auto 45px;
+  position: relative;
+  padding-top: 30px;
+}
+
+.cake-top,
+.cake-middle,
+.cake-bottom {
+  width: 100%;
+  position: relative;
+}
+
+.cake-top {
+  height: 48px;
+  border-radius: 22px 22px 17px 17px;
+  background: #fff0bf;
+  box-shadow: inset 0 -7px #ef83a0;
+}
+
+.cake-middle {
+  height: 61px;
+  border-radius: 18px;
+  background: #f7a6bb;
+  box-shadow: inset 0 -7px #e87894;
+}
+
+.cake-bottom {
+  height: 67px;
+  border-radius: 0 0 30px 30px;
+  background: #ef7d9d;
+}
+
+/* Candle stays exactly upright */
+.candle {
+  position: absolute;
+  z-index: 5;
+  top: -48px;
+  left: 50%;
+  width: 20px;
+  height: 80px;
+  border-radius: 4px;
+  background: repeating-linear-gradient(
+    45deg,
+    #fff7d7 0 8px,
+    #ef6d8d 8px 16px
+  );
+  transform: translateX(-50%);
+}
+
+/* Flame is straight, centred and glowing */
+.flame {
+  position: absolute;
+  top: -39px;
+  left: 50%;
+  width: 24px;
+  height: 37px;
+  border-radius: 50% 50% 50% 0;
+  background: linear-gradient(
+    to bottom,
+    #fff9a8 0%,
+    #ffb84a 45%,
+    #f46550 100%
+  );
+  box-shadow: 0 0 25px #ffbf55;
+  transform: translateX(-50%) rotate(-45deg);
+  transform-origin: bottom center;
+  animation: flicker 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes flicker {
+  from {
+    transform: translateX(-50%) rotate(-45deg) scale(1);
+  }
+
+  to {
+    transform: translateX(-50%) rotate(-39deg) scale(0.88);
+  }
+}
+
+.flame.blown {
+  opacity: 0;
+  animation: none;
+  transform: translateX(-50%) scale(0);
+  transition: 0.7s ease;
+}
+
+.wish-note {
+  margin: 0;
+  color: #a8757b;
+  font-family: "Allura", cursive;
+  font-size: clamp(2.2rem, 8vw, 3.6rem);
+  line-height: 1;
+}
+/* Wish popup */
+
+.wish-popup {
+  display: none;
+  position: fixed;
+  z-index: 50;
+  inset: 0;
+  padding: 25px;
+  place-items: center;
+  background: rgba(79, 47, 53, 0.32);
+  backdrop-filter: blur(5px);
+}
+
+.wish-popup.show {
+  display: grid;
+}
+
+.wish-popup-card {
+  width: min(100%, 460px);
+  padding: 44px 28px;
+  text-align: center;
+  border-radius: 28px;
+  background: #fffdf8;
+  box-shadow: 0 20px 50px rgba(102, 42, 59, 0.3);
+  animation: wishPop 0.55s ease-out;
+}
+
+.wish-popup-card div {
+  font-size: 3.4rem;
+}
+
+.wish-popup-card h2 {
+  color: #d75f79;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.3rem, 8vw, 3.8rem);
+  line-height: 0.95;
+}
+
+.wish-popup-card p {
+  color: #8a6567;
+  font-family: "Gochi Hand", cursive;
+  font-size: 1.5rem;
+}
+
+@keyframes wishPop {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* FIX: arrow must visibly travel, not jump */
+
+.cupid-arrow {
+  top: 68%;
+  left: 10%;
+  opacity: 0;
+  animation: none !important;
+  transition:
+    top 1.25s cubic-bezier(.2, .75, .25, 1),
+    left 1.25s cubic-bezier(.2, .75, .25, 1),
+    opacity 0.2s ease;
+}
+
+.cupid-arrow.shoot {
+  opacity: 1;
+  animation: none !important;
+}
+
+
+/* FIX: letter is fully hidden before envelope click */
+
+/* Front envelope remains over the lower letter */
+.envelope-scene .envelope-button {
+  z-index: 10;
+}
+
+.wish-popup-card {
+  position: relative;
+}
+
+.popup-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 50%;
+  background: #ffe1e8;
+  color: #d75a7a;
+  font-size: 1.7rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.popup-close:hover {
+  transform: scale(1.1);
+  background: #ffcbd8;
+}
+
+.celebration {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.confetti {
+  position: absolute;
+  top: -35px;
+  animation: confetti-fall 2.3s ease-in forwards;
+}
+
+@keyframes confetti-fall {
+  to {
+    transform: translate(var(--drift), 110vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+/* Cat video: green screen canvas par remove hoga */
+.cat-canvas {
+  display: block;
+  background: transparent;
+}
+
+/* Song button */
+.play-song-button {
+  margin-top: 22px;
+  border: 0;
+  background: linear-gradient(90deg, #f17494, #e7466c);
+  box-shadow: 0 8px 17px rgba(207, 64, 100, 0.28);
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+}
+
+/* Song button */
+.play-song-button {
+  margin-top: 22px;
+  border: 0;
+  background: linear-gradient(90deg, #f17494, #e7466c);
+  box-shadow: 0 8px 17px rgba(207, 64, 100, 0.28);
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+}
+
+/* Memory-video page */
+.memory-video {
+  position: fixed;
+  z-index: 2000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: 45px 24px;
+  background: #fff;
+}
+/* ❤️ Big red heart on memory video page */
+.memory-video::before {
+  content: "♥";
+  position: absolute;
+  z-index: 10;
+  top: 28px;
+  right: 105px;
+  color: #b91f3a;
+  font-size: 105px;
+  line-height: 1;
+  transform: rotate(-15deg);
+  font-family: Arial, sans-serif;
+  text-shadow: 0 3px 0 rgba(120, 20, 35, 0.08);
+  pointer-events: none;
+}
+
+/* 🔴 Small red dots like the reference page */
+
+  
+.memory-background-art {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+}
+
+.memory-heading,
+.frame-flower,
+.frame-heart,
+.frame-sparkle {
+  display: none !important;
+}
+
+.memory-video .video-frame {
+  position: relative;
+  z-index: 5;
+  display: block;
+  margin: 0;
+  padding: 8px;
+  border: 3px solid #bf2a3d;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 15px 35px rgba(109, 34, 43, 0.22);
+}
+
+.memory-video .video-frame video {
+  width: min(68vw, 390px);
+  height: min(76vh, 700px);
+  display: block;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+.cat-bouquet {
+  position: absolute;
+  z-index: 6;
+  bottom: clamp(28px, 7vh, 75px);
+  left: clamp(18px, 7vw, 130px);
+  width: clamp(150px, 22vw, 280px);
+  height: auto;
+  mix-blend-mode: multiply;
+  filter: drop-shadow(0 10px 12px rgba(95, 38, 45, 0.2));
+  transform: rotate(-4deg);
+}
+
+.memory-video .video-close {
+  position: fixed;
+  z-index: 20;
+  top: 22px;
+  right: 22px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: #bf2a3d;
+  box-shadow: 0 5px 16px rgba(100, 37, 48, 0.2);
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  line-height: 1;
+}
+
+/* Kisses popup */
+.kiss-popup {
+  position: fixed;
+  z-index: 3000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  background: rgba(86, 45, 57, 0.48);
+  backdrop-filter: blur(7px);
+}
+
+.kiss-popup[hidden] {
+  display: none;
+}
+
+.kiss-popup-card {
+  position: relative;
+  width: min(94vw, 520px);
+  min-height: 650px;
+  padding: 55px 38px 45px;
+  text-align: center;
+  border: 4px solid #fffdf9;
+  border-radius: 32px;
+  background: linear-gradient(135deg, #fffafb, #ffe5ed);
+  box-shadow: 0 22px 60px rgba(95, 39, 55, 0.34);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.kiss-placeholder {
+  font-size: 4.5rem;
+}
+
+.kiss-popup-card h2 {
+  margin: 20px 0 14px;
+  color: #db5c80;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 0.95;
+  max-width: 430px;
+}
+.kiss-popup-card p {
+  margin: 0;
+  color: #9d6c75;
+  font-family: "Allura", cursive;
+  font-size: 2.2rem;
+}
+
+.kiss-close {
+  position: absolute;
+  top: 15px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #fffdf9;
+  color: #df5d81;
+  box-shadow: none;
+  font-family: Arial, sans-serif;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.kiss-canvas {
+  display: none;
+}
+
+@media (max-width: 600px) {
+
+  .memory-video {
+    padding: 65px 14px 30px;
+  }
+
+  .memory-video .video-frame video {
+    width: min(73vw, 340px);
+    height: 70vh;
+  }
+
+  .cat-bouquet {
+    bottom: 22px;
+    left: 4px;
+    width: 135px;
+  }
+
+  /* ❤️ Mobile red heart */
+  .memory-video::before {
+    top: 22px;
+    right: 78px;
+    font-size: 75px;
+  }
+
+  .kiss-popup-card {
+    width: calc(100vw - 28px);
+    min-height: 620px;
+    padding: 48px 30px 38px;
+    border-radius: 28px;
+  }
+
+  .kiss-popup-card h2 {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    max-width: 250px;
+  }
+
+}
+.memory-dots {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.memory-dots::before,
+.memory-dots::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  background-repeat: no-repeat;
+}
+
+/* LEFT + TOP + RIGHT dots */
+.memory-dots {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.memory-dots::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at 29% 9%, #b91f3a 0 5px, transparent 6px),
+    radial-gradient(circle at 7% 38%, #b91f3a 0 3px, transparent 4px),
+    radial-gradient(circle at 17% 72%, #b91f3a 0 3px, transparent 4px),
+    radial-gradient(circle at 48% 18%, #b91f3a 0 3px, transparent 4px),
+    radial-gradient(circle at 76% 14%, #b91f3a 0 3px, transparent 4px),
+    radial-gradient(circle at 94% 36%, #b91f3a 0 3px, transparent 4px),
+    radial-gradient(circle at 91% 67%, #b91f3a 0 3px, transparent 4px),
+    radial-gradient(circle at 74% 91%, #b91f3a 0 3px, transparent 4px),
+    radial-gradient(circle at 47% 94%, #b91f3a 0 3px, transparent 4px),
+    radial-gradient(circle at 25% 88%, #b91f3a 0 3px, transparent 4px),
+    radial-gradient(circle at 5% 89%, #b91f3a 0 3px, transparent 4px);
+    
+  background-repeat: no-repeat;
+}
+/* FINAL PHONE HEART FIX */
+@media (max-width: 600px) {
+
+  .glowy-heart {
+    top: 13%;
+    right: 5%;
+    font-size: 5.8rem;
+    z-index: 3;
+  }
+
+  .pink-circle {
+    top: 9%;
+    right: 1%;
+    width: 110px;
+    height: 110px;
+  }
+
+}
+/* ================================
+   MOBILE FIXES
+   ================================ */
+
+/* Keep the page inside the phone screen */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* ---------- HEART + ARROW ---------- */
+
+@media (max-width: 600px) {
+
+  .birthday-page {
+    position: relative;
+    width: 100%;
+    min-height: 100svh;
+    overflow: hidden;
+  }
+
+  .glowy-heart {
+    top: 12%;
+    right: 6%;
+    font-size: 6.6rem;
+    z-index: 40;
+  }
+
+  .cupid-arrow {
+    z-index: 50;
+    width: 125px;
+    height: 28px;
+    transform-origin: 15px 14px;
+  }
+
+}
+
+
+/* ---------- MEMORY VIDEO ---------- */
+
+.memory-video {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100svh;
+
+  padding: 20px;
+  box-sizing: border-box;
+
+  background: rgba(70, 45, 55, 0.55);
+  backdrop-filter: blur(5px);
+
+  overflow: hidden;
+}
+
+.memory-video[hidden] {
+  display: none !important;
+}
+
+.video-frame {
+  position: relative;
+
+  width: min(90vw, 520px);
+  height: min(60vh, 520px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+
+  z-index: 10;
+}
+
+#memoryClip {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+.memory-background-art {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  opacity: 0.35;
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cat-bouquet {
+  position: absolute;
+
+  left: 5%;
+  bottom: 4%;
+
+  width: clamp(80px, 25vw, 150px);
+  height: auto;
+
+  z-index: 20;
+
+  pointer-events: none;
+}
+
+.video-close {
+  position: absolute;
+
+  top: 20px;
+  right: 20px;
+
+  width: 45px;
+  height: 45px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: white;
+  color: #d75f79;
+
+  font-size: 30px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  z-index: 50;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ---------- KISS POPUP ---------- */
+
+.kiss-popup {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 2000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100svh;
+
+  padding: 20px;
+  box-sizing: border-box;
+
+  background: rgba(70, 45, 55, 0.55);
+  backdrop-filter: blur(5px);
+
+  overflow: hidden;
+}
+
+.kiss-popup[hidden] {
+  display: none !important;
+}
+
+.kiss-popup-card {
+  position: relative;
+
+  width: min(90vw, 520px);
+  max-height: 85svh;
+
+  padding: 55px 20px 30px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 28px;
+
+  background: #fff5f8;
+
+  box-shadow: 0 20px 60px rgba(80, 30, 50, 0.3);
+
+  overflow: hidden;
+}
+
+#kissVideo {
+  display: block;
+
+  width: min(100%, 430px);
+  height: auto;
+  max-height: 52vh;
+
+  object-fit: contain;
+
+  border-radius: 12px;
+
+  margin: 0 auto 25px;
+}
+
+.kiss-popup-card h3 {
+  width: 100%;
+
+  margin: 0;
+
+  padding: 0 10px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+
+  font-family: sans-serif;
+  font-size: clamp(1.2rem, 5vw, 2rem);
+  line-height: 1.25;
+
+  color: #111;
+}
+
+.kiss-popup-card p {
+  margin: 25px 0 0;
+
+  text-align: center;
+
+  font-family: cursive;
+  font-size: clamp(1.5rem, 6vw, 2.3rem);
+
+  color: #a8757b;
+}
+
+.kiss-close {
+  position: absolute;
+
+  top: 15px;
+  right: 15px;
+
+  width: 42px;
+  height: 42px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: white;
+
+  color: #d75f79;
+
+  font-size: 28px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  z-index: 20;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ---------- SMALL PHONES ---------- */
+
+@media (max-width: 480px) {
+
+  .video-frame {
+    width: 88vw;
+    height: 55vh;
+  }
+
+  #memoryClip {
+    object-fit: contain;
+  }
+
+  .cat-bouquet {
+    left: 2%;
+    bottom: 3%;
+    width: 90px;
+  }
+
+  .kiss-popup-card {
+    width: 90vw;
+    max-height: 82svh;
+
+    padding: 55px 15px 25px;
+  }
+
+  #kissVideo {
+    width: 100%;
+    max-height: 48vh;
+  }
+
+  .kiss-popup-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .kiss-popup-card p {
+    font-size: 1.7rem;
+  }
+
+}
+/*
+  @media screen and (max-width: 600px) { 📱 ONLY FOR MOBILE */
+
+@media (max-width: 600px) {
+
+  .glowy-heart {
+    top: 15%;
+    right: 8%;
+    font-size: 6rem;
+    z-index: 40;
+  }
+
+  .pink-circle {
+    top: 11%;
+    right: 4%;
+    width: 105px;
+    height: 105px;
+  }
+
+  .cupid-arrow {
+    width: 115px;
+    height: 25px;
+    z-index: 50;
+  }
+
+}

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthday Surprise</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <audio id="birthdaySong" loop preload="auto">
+    <source src="images/song.mp3" type="audio/mp3"/>
+  </audio>
+
+  <main class="page" id="firstPage">
+    <p class="top-text">A LITTLE SOMETHING FOR YOU ♡</p>
+
+    <img
+      src="images/baby.jpeg"
+      alt="Cute baby"s
+      class="baby-sticker"
+    />
+
+    <h1>Hey cutiee!</h1>
+
+    <p class="question">
+      I have a surprise for you.<br />
+      Wanna see it?
+    </p>
+
+    <div class="buttons">
+      <button id="yesButton">YES, YES!</button>
+      <button id="noButton">NO</button>
+    </div>
+
+    <p class="small-text">choose carefully hehe</p>
+  </main>
+
+  <section class="birthday-page" id="birthdayPage">
+    <div class="pink-circle"></div>
+
+    <div class="glowy-heart" id="heart">💗</div>
+
+    <div class="cupid-arrow" id="flyingArrow">
+      <span class="shaft"></span>
+      <span class="tip"></span>
+      <span class="feather feather-one"></span>
+      <span class="feather feather-two"></span>
+    </div>
+
+    <div class="birthday-message" id="birthdayMessage">
+      <p class="mini-text">TODAY IS A VERY SPECIAL DAY ✦</p>
+
+      <h2>Happy<br />Birthday</h2>
+      <h3>My Jellybean ♡</h3>
+
+      <p class="love-text">
+        You are the best.<br />
+        I love you so much! ♡
+      </p>
+
+      <button class="surprise-button" id="openSurpriseButton">
+        ✦ OPEN YOUR SURPRISE →
+      </button>
+    </div>
+  </section>
+
+  <section class="envelope-page" id="envelopePage">
+    <p class="envelope-top-text">♥ A BIRTHDAY SURPRISE ♥</p>
+
+    <h2 class="envelope-title">a little surprise for you</h2>
+    <p class="envelope-subtitle">happy birthday ♡</p>
+
+    <video id="catVideo" autoplay muted loop playsinline>
+      <source src="images/cat-sticker.mp4" type="video/mp4" />
+    </video>
+
+    <canvas id="catCanvas" class="cat-canvas"></canvas>
+
+    <div class="envelope-scene" id="envelopeScene">
+
+      <button class="envelope-button" id="envelopeButton">
+        <span class="envelope-flap"></span>
+        <span class="envelope-heart">♡</span>
+      </button>
+    </div>
+  </section>
+<section class="letter-page" id="letterPage">
+  <div class="letter-paper">
+    <p class="letter-label">♥ FOR MY FAVOURITE PERSON ♥</p>
+
+    <h3>A secret message for my love </h3><br/>
+
+    <p class="secret-message">
+      I don't know how to start but yeah...<br /><br />
+      Sometimes we break through uncertainties and that's what we happened through.
+      A year ago, While I was searching for myself somewhere around.. I found you 🤍
+      and that's how it started. I never thought it would happen... I tryna run from
+      you many time coz I was afraid to get attached yk attachment issue suckss...
+      but see now god's plan if it's meant to be it will be anyway and now I can't even
+      imagine anything without you. Ohh my love I am done for real 😭<br/><br/>   
+
+      Looking back to our days feels like a dream now.. even though we made it till now with ups and downs
+      but I am still unknown Abt the future and may be you are too. I really wanna spend my rest of life with you but at the same time
+      I question myself are we sure we could make through eveything just like we did till now..
+      You and I are different sides of coins. We could bearly fit in each others life. But you know what's the best thing
+      us choosing eachother evey single time even after arguing abt everything.🤍
+      I know, it's not easy to fits within someone else but I really wanna try with you and I hope this from you too to make through eveything just with you.🙌<br /><br />
+
+      At this point of life I know you are struggling, lossing, tired, lost and so on but at the same time you are trying, learning and winning tooo...
+      and that make me proud every single day. I just want to tell you no matter how hard it is don't loose hope🤍 you are gonna make through everything I believe in you.
+      But if you ever felt lost someday search for me. My shoulder will always be there for you no matter what🫂 I will always be cheering for you🤍
+      Be patience with everything🙂‍↔️ <br /><br />
+
+      These word might not be able to define your situation rn and I might not be able to know how it feels to be wthin your shoes
+      but also I might not be able to define my love and support for you in these words🤍 I really wanna see the happiest version of yours❤️<br />
+
+      All I wanna say is Iloveyou today, tommorow, everyday🤍. Want our Chaostic verison forever to be. Just go for everything you want.
+      Bless you with the best once again love you❤️💋<br/><br/>
+    </p>
+
+    <p class="letter-sign">
+      with all my love,<br />
+      <span>Your pretty Chaostic Girlfriend🤍</span>
+    </p>
+  </div>
+
+  <section class="song-placeholder">
+    <p>♪ A song for you ♪</p>
+    <small>Click it when you finish reading. ♡</small>
+
+    <button class="play-song-button" id="playMemoryButton">
+      PLAY the song♡
+    </button>
+  </section>
+</section>
+<div class="memory-video" id="memoryVideo" hidden>
+  <div class="memory-dots"></div>
+  <img
+    class="memory-background-art"
+    src="images/memory-background.png"
+    alt=""
+  />
+
+  <img
+    class="cat-bouquet"
+    src="images/cat-bouquet.png"
+    alt="Cat holding flowers"
+  />
+
+  <div class="video-frame">
+    <video id="memoryClip" muted playsinline loop>
+      <source src="images/our-video.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+  <button class="video-close" id="videoClose" aria-label="Close video">×</button>
+</div>
+<div class="kiss-popup" id="kissPopup" hidden>
+  <div class="kiss-popup-card">
+    <button class="kiss-close" id="kissClose" aria-label="Close">×</button>
+
+    <video id="kissVideo" autoplay muted loop playsinline>
+      <source src="images/kisses-sticker.mp4" type="video/mp4" />
+    </video>
+
+    <h3>many many many kissesss for youuuu my boyfriend 😘</h3>
+
+    <p>with all my love ♡</p>
+  </div>
+</div>
+
+
+<div id="celebration" class="celebration" aria-hidden="true"></div>
+<script src="scriptt.js"></script>
+</body>
+</html>
