@@ -1567,13 +1567,13 @@ body {
 
 @media (max-width: 600px) {
 
-  .glowy-heart {
-    top: 15%;
-    right: 8%;
-    font-size: 6rem;
-    z-index: 40;
-  }
 
+  .glowy-heart {
+    top: 13%;
+    right: 5%;
+    font-size: 5.8rem;
+    z-index: 3;
+  }
   .pink-circle {
     top: 11%;
     right: 4%;
