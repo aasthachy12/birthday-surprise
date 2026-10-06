@@ -664,11 +664,13 @@ button:hover {
     height: 118px;
   }
 
+
   .cupid-arrow {
     bottom: 24%;
     left: 8%;
-    transform: rotate(-34deg) scale(0.85);
+    transform: rotate(var(--arrow-angle));
   }
+
 
   @keyframes arrowToHeart {
     0% {
